@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/github.io/react-filter-demo/precache-manifest.330a1a7eb5e2ba9a0275c681702172e4.js"
+  "/react-filter-demo/precache-manifest.9ca4aa0cfd0d86b8e37664adb2a84de2.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/github.io/react-filter-demo/index.html", {
+workbox.routing.registerNavigationRoute("/react-filter-demo/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
