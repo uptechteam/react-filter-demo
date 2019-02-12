@@ -1,0 +1,157 @@
+@import '../../styles/index.scss';
+.search-wrapper {
+    width: 442px;
+    height: 40px;
+    box-shadow: 0 8px 6px -6px rgba($black, 0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+    .input-wrapper {
+        width: 352px;
+        
+      
+        border-radius: 3px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+     
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+    input {
+        height: 40px;
+        background: none;
+        border: none;
+        width: 260px;
+        padding-left: 15px;
+        &:disabled {
+            cursor: not-allowed;
+        }
+        
+    }
+    .buttons-wrapper {
+        display: flex;
+        border-left: 1px solid $smoke;
+        height: 30px;
+        transform: translateX(100%);
+        transition: all ease-in .3s;
+        button {
+            width: 30px;
+            border: none;
+            background: none;
+            background-size: 60%;
+            background-position-x: 50%;
+            background-position-y: 50%;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            transition: all .2s ease;
+            cursor: pointer;
+            &:hover {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            &:active,
+            &:focus {
+                outline: none;
+            }
+            &.up-button,
+            &.down-button {
+                background-image: url('../../assets/images/arrow.svg');
+            }
+            &.up-button {
+                transform: rotate(-90deg);
+                &:hover {
+                    transform: rotate(-90deg) scale(1.1);
+                }
+            }
+            &.down-button {
+                transform: rotate(90deg);
+                &:hover {
+                    transform: rotate(90deg) scale(1.1);
+                }
+            }
+            &.clear-button {
+                background-image: url('../../assets/images/delete.svg');
+                background-size: 70%;
+            }
+        }
+    }
+    .search-button {
+        width: 90px;
+        height: 42px;
+        font-size: 12px;
+        font-weight: 600;
+        color: $white;
+   
+        background: $brand-black;
+        color: $white;
+        border: 2px solid $brand-black;
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+        cursor: pointer;
+        transition: all .2s ease;
+        &:hover:enabled {
+            box-shadow: -3px 6px 6px -2px rgba(0,0,0,0.5);
+            height: 42px;
+            transform: scale(1.002)
+        }
+        &:hover:disabled {
+            cursor: not-allowed;
+        }
+    }
+    &.show-controls {
+        .buttons-wrapper {
+            transform: translateX(0);
+        }
+    }
+    &.is-searching {
+        .input-wrapper {
+            filter: blur(4px);
+        }
+        .search-button {
+            opacity: 0.3;
+            height: 40px;
+        }
+    }
+}
+
+.progress-wrapper {
+    background: $main-teal-20;
+    position: absolute;
+  
+    top: 0;
+    right: 90px;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    .progress {
+        position: absolute; 
+        top: 0; right: 0; bottom: 0; left: 0;
+        transform: scaleX(0.1);
+        transition: .1s ease-in transform;
+        background: $main-teal-40;
+        transform-origin: left;
+
+    }
+    .progress-value {
+        font-size: 14px;
+    }
+}
+.count-wrapper {
+    position: absolute;
+    right: 190px;
+   span {
+    font-size: 11px;
+    font-weight: 600;
+   }
+}

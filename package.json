@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "arrow-keys-react": "^1.0.6",
+    "classnames": "^2.2.6",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-scripts": "2.1.3"
+    "react-list": "^0.8.11",
+    "react-scripts": "2.1.3",
+    "react-virtualized": "^9.21.0",
+    "simple-web-worker": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,5 +28,12 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "eslint-plugin-react": "^7.12.4"
+  }
 }

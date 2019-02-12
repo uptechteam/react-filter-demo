@@ -1,0 +1,27 @@
+
+@import './styles/index';
+.app-wrapper {
+  background: $white;
+}
+.header {
+  width: 100%;
+  position: fixed;
+  height: 80px;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: white;
+  padding: 0 40px;
+  box-shadow: 0 2px 4px $slate-grey-10;
+  z-index: 100;
+}
+
+.main-logo {
+  width: 170px;
+}
+.app-body {
+  padding-top: 80px;
+  min-height: 100vh
+
+}
