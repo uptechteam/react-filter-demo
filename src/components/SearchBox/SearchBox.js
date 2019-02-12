@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import ArrowKeysReact from 'arrow-keys-react';
+
 import './SearchBox.scss';
 // import PropTypes from 'prop-types';
 
@@ -21,23 +21,6 @@ class SearchBox extends Component {
     // of highlight 0 at SearchBox and at TablesView components
   };
 
-  constructor(props) {
-    super(props);
-    ArrowKeysReact.config({
-      left: () => {
-        console.log('left key detected.');
-      },
-      right: () => {
-        console.log('right key detected.');
-      },
-      up: () => {
-        console.log('up key detected.');
-      },
-      down: () => {
-        console.log('down key detected.');
-      },
-    });
-  }
 
   changeHandler = ({ target: input }) => {
     this.setState(() => ({
@@ -106,7 +89,10 @@ class SearchBox extends Component {
             style={{ transform: `scaleX(${progress})` }}
             className="progress"
           />
-          <span className="progress-value">{Math.ceil(progress * 100)}%</span>
+          <span className="progress-value">
+            {Math.ceil(progress * 100)}
+            %
+          </span>
         </div>
       );
     }
@@ -141,7 +127,7 @@ class SearchBox extends Component {
     const buttonDisabled = currentProcessingChunk !== -1;
 
     return (
-      <div {...ArrowKeysReact.events} tabIndex="1" className={searchWrapperClasses}>
+      <div className={searchWrapperClasses}>
         {this.renderSearchProgress(currentProcessingChunk, chunksLength)}
         <div className="input-wrapper">
           <input
