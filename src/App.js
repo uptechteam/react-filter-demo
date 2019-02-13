@@ -5,7 +5,7 @@ import TablesView from './components/TablesView/TablesView';
 import { arraySlicer } from './utils/helpers';
 import SearchBox from './components/SearchBox/SearchBox';
 
-const LENGTH_OF_CHUNK = 300;
+const LENGTH_OF_CHUNK = 100;
 
 const data = require('./data.json');
 
@@ -56,18 +56,35 @@ class App extends Component {
   }
 
   render() {
+    const {
+      chunkedUsers,
+      searchValue,
+      currentProcessingChunk,
+      chunksLength,
+      highLight,
+      nextHighlightIndex,
+    } = this.state;
 
-    const { chunkedUsers, searchValue, currentProcessingChunk, chunksLength, highLight,
-    nextHighlightIndex } = this.state;
-    console.log(searchValue);
     return (
       <div className="app-wrapper">
         <header className="header">
           <img className="main-logo" src={logo} alt="main logo" />
-          <SearchBox highLight={highLight} sendNextHighLightIndex={this.getNextHighLightIndex} currentProcessingChunk={currentProcessingChunk} chunksLength={chunksLength} sendSearchValue={this.getSearchValue} />
+          <SearchBox
+            highLight={highLight}
+            sendNextHighLightIndex={this.getNextHighLightIndex}
+            currentProcessingChunk={currentProcessingChunk}
+            chunksLength={chunksLength}
+            sendSearchValue={this.getSearchValue}
+          />
         </header>
         <div className="app-body">
-          <TablesView users={chunkedUsers} sendHighLightInfo={this.getHighLightInfo} nextHighlightIndex={nextHighlightIndex} sendCurrentProcessingChunk={this.getCurrentProcessingChunk} searchValue={searchValue} />
+          <TablesView
+            users={chunkedUsers}
+            sendHighLightInfo={this.getHighLightInfo}
+            nextHighlightIndex={nextHighlightIndex}
+            sendCurrentProcessingChunk={this.getCurrentProcessingChunk}
+            searchValue={searchValue}
+          />
         </div>
       </div>
     );

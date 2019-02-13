@@ -99,12 +99,14 @@ class SearchBox extends Component {
     return null;
   };
 
-  renderHighLightCount = (currentHighLight, allHighLight) => {
-    if (allHighLight) {
+  renderHighLightCount = (inputValue, currentHighLight, allHighLight) => {
+    if (inputValue && allHighLight) {
       return (
         <div className="count-wrapper">
           <span>
-            {currentHighLight + 1} / {allHighLight}
+            {currentHighLight + 1}
+              /
+            {allHighLight}
           </span>
         </div>
       );
@@ -161,7 +163,7 @@ class SearchBox extends Component {
               className="clear-button"
             />
           </div>
-          {this.renderHighLightCount(currentHighLight, allHighLight)}
+          {this.renderHighLightCount(inputValue, currentHighLight, allHighLight)}
         </div>
 
         <button

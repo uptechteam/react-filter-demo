@@ -2,9 +2,11 @@
   "name": "search-demo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://uptechteam.github.io/react-filter-demo/",
   "dependencies": {
     "arrow-keys-react": "^1.0.6",
     "classnames": "^2.2.6",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
@@ -18,6 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
