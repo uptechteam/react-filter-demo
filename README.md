@@ -5,7 +5,7 @@
 
 ## Why ?
 
-Sometimes you need to filter 1Gb JSON file on frontend (± 2 millions records) without crashing the browser.
+Sometimes you need to filter 1Gb JSON file on frontend (± 2 millions records) without crashing the browser. [Read more](https://medium.com/@oleksii.kryvonosov/how-to-filter-1gb-json-on-the-frontend-and-not-crash-the-browser)
 
 ## Working demo ?
 
